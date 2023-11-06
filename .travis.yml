@@ -9,13 +9,13 @@ script:
   - docker run -e CI=true kk/react-test npm test -- --coverage
 
 after_success: 
-  - docker build -t kkyselov/multi-client ./client
-  - docker build -t kkyselov/multi-nginx ./nginx
-  - docker build -t kkyselov/multi-server ./server
-  - docker build -t kkyselov/multi-worker ./worker
+  - docker build -t kilimanjaroo/multi-client ./client
+  - docker build -t kilimanjaroo/multi-nginx ./nginx
+  - docker build -t kilimanjaroo/multi-server ./server
+  - docker build -t kilimanjaroo/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
 
-  - docker push kkyselov/multi-client
-  - docker push kkyselov/multi-nginx
-  - docker push kkyselov/multi-server
-  - docker push kkyselov/multi-worker
+  - docker push kilimanjaroo/multi-client
+  - docker push kilimanjaroo/multi-nginx
+  - docker push kilimanjaroo/multi-server
+  - docker push kilimanjaroo/multi-worker
