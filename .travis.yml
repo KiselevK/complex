@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install: 
- - docker build -t kk/react-test -f ./client/Dockerfile.dev ./client
+ - docker build -t kilimanjaroo/react-test -f ./client/Dockerfile.dev ./client
 
 script: 
-  - docker run -e CI=true kk/react-test npm test -- --coverage
+  - docker run -e CI=true kilimanjaroo/react-test npm test -- --coverage
 
 after_success: 
   - docker build -t kilimanjaroo/multi-client ./client
